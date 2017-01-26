@@ -1,4 +1,6 @@
 class TagsController < ApplicationController
+
+	before_filter :require_login, only: [:destroy]
 def comment_params
   params.require(:tag).permit(:tag_name, :id)
 end
